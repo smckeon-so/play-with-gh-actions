@@ -30,8 +30,8 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     
-    - run: zip -r build.zip build
-    - run: ls -al build.zip
+    - run: zip -r ui-build-artifacts.zip build
+    - run: ls -al
 
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v2
