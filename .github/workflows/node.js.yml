@@ -29,3 +29,15 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    
+    - run: zip -r build.zip build
+    - run: ls -al build
+
+#     - name: Upload binaries to release
+#       uses: svenstaro/upload-release-action@v2
+#       with:
+#         file: target/release/mything
+#         asset_name: mything
+#         tag: ${{ github.ref }}
+#         overwrite: true
+#         body: "This is my release text"
