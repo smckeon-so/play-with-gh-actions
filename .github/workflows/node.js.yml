@@ -33,11 +33,9 @@ jobs:
     - run: zip -r build.zip build
     - run: ls -al build.zip
 
-#     - name: Upload binaries to release
-#       uses: svenstaro/upload-release-action@v2
-#       with:
-#         file: target/release/mything
-#         asset_name: mything
-#         tag: ${{ github.ref }}
-#         overwrite: true
-#         body: "This is my release text"
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        file: build.zip
+        overwrite: true
+        body: "This is my release text"
